@@ -1,0 +1,52 @@
+<div
+  class="container"
+  fxLayout="row"
+  fxLayoutAlign="center"
+  fxLayoutGap="3.0%">
+  <mat-card fxFlex="{{ (activeList) ? '50%' : '100%' }}">
+    <mat-toolbar color="accent">
+      <span>My Lists</span>
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item *ngFor="let list of lists; last as last">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start center">
+          <div fxFlex="50%">
+            {{ list.name }}
+          </div>
+          <div
+            fxFlex="50%"
+            class="text-right">
+            <button
+              mat-raised-button
+              class="bold"
+              color="accent"
+              (click)="viewList(list)">Manage</button>
+            <button
+              mat-raised-button
+              class="bold"
+              color="warn"
+              style="margin-left: 15px;"
+              (click)="removeList(list)">Remove</button>
+          </div>
+        </div>
+        <mat-divider
+          [inset]="true"
+          *ngIf="!last">
+        </mat-divider>
+      </mat-list-item>
+      <mat-list-item *ngIf="lists.length === 0">
+        <span class="text-muted">Sorry, it doesn't look like you've added any lists yet.</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card
+    *ngIf="activeList"
+    fxFlex="50%">
+    <app-movie-list-detail
+      [activeList]=activeList
+      (updated)="onUpdate($event)">
+    </app-movie-list-detail>
+  </mat-card>
+</div>

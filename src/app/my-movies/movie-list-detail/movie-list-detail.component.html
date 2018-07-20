@@ -1,0 +1,80 @@
+<div>
+  <mat-toolbar
+    color="accent"
+    class="m-b-sm">
+    <span>Active List</span>
+  </mat-toolbar>
+  <div class="form-wrapper">
+    <form
+      #activeListForm="ngForm"
+      autocomplete="off"
+      fxLayout="column"
+      *ngIf="activeList">
+      <div
+        class="p-md"
+        fxLayout="column">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="List Name"
+            name="name"
+            type="text"
+            [ngModel]=activeList.name>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            placeholder="List Description"
+            name="description"
+            [ngModel]="activeList.description">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <mat-toolbar>
+        <span>Movies</span>
+      </mat-toolbar>
+      <mat-list class="m-b-md">
+        <mat-list-item *ngIf="activeList.movies.length === 0">
+          <small class="text-muted">You haven't added any movies to this list yet!</small>
+        </mat-list-item>
+        <mat-list-item *ngFor="let movie of activeList.movies">
+          <div
+            fxLayout="row"
+            fxLayoutAlign="start center">
+            <div fxFlex="50%">
+              {{ movie.title }}
+            </div>
+            <div
+              fxFlex="50%"
+              class="text-right">
+              <div class="button-row">
+                <button
+                  mat-raised-button
+                  type="button"
+                  (click)="openDetail(movie)">
+                  Detail
+                </button>
+                <button
+                  mat-raised-button
+                  type="button"
+                  color="warn"
+                  (click)="removeMovieFromList(movie)">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <div class="button-row">
+        <button
+          mat-raised-button
+          type="button"
+          color="primary"
+          (click)="updateList(activeListForm)">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

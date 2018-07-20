@@ -1,0 +1,16 @@
+<div class="container p-lg">
+  <div>
+    <h2>My Movies</h2>
+    <p class="text-muted">Manage your lists from here.</p>
+  </div>
+  <div class="container m-b-md">
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="openDialog()">Create a List</button>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

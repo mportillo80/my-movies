@@ -1,0 +1,34 @@
+<div>
+  <div class="section-selected-movie m-b-md">
+    <mat-toolbar color="primary">
+      <span>Selected Movie:</span>
+    </mat-toolbar>
+    <div class="m-t-md">
+      {{ data.selectedMovie.title }}
+    </div>
+  </div>
+  <div class="section-available-lists">
+    <mat-toolbar color="primary">
+      <span>Available Lists:</span>
+    </mat-toolbar>
+    <div class="lists m-b-md">
+      <mat-selection-list #lists>
+        <mat-list-option
+          *ngFor="let list of data.lists"
+          [value]="list">
+          {{ list.name }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </div>
+  <div class="button-row">
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      (click)="saveMovieToLists(lists)">Save</button>
+    <button
+      mat-raised-button
+      (click)="closeDialog()">Close</button>
+  </div>
+</div>

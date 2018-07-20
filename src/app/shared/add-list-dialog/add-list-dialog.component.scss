@@ -1,0 +1,8 @@
+.form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper > * {
+  width: 100%;
+}

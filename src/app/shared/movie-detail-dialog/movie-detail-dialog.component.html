@@ -1,0 +1,31 @@
+<header>
+  <h3>{{ data.selectedMovie.title }}</h3>
+  <span class="list-subtitle">Release Date: {{ data.selectedMovie.release_date | date }}</span>
+</header>
+<div
+  class="body"
+  fxLayout="row">
+  <div fxFlex="40%">
+    <img
+      src="https://image.tmdb.org/t/p/w185{{ data.selectedMovie.poster_path }}"
+      alt="movie-img">
+  </div>
+  <div fxFlex="60%">
+    {{ data.selectedMovie.overview }}
+    <div class="metrics">
+      <mat-chip-list>
+        <mat-chip
+          color="primary"
+          selected>Vote Average: {{ data.selectedMovie.vote_average }}</mat-chip>
+        <mat-chip
+          color="accent"
+          selected>Vote Count: {{ data.selectedMovie.vote_count | number }}</mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+</div>
+<div class="button-row">
+  <button
+    mat-raised-button
+    (click)="closeDialog()">Close</button>
+</div>

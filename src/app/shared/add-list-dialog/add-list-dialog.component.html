@@ -1,0 +1,33 @@
+<h3>Create List</h3>
+<div class="form-wrapper">
+  <form
+    #listForm="ngForm"
+    autocomplete="off">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="List Name"
+        name="name"
+        type="text"
+        ngModel />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="List description"
+        name="description"
+        ngModel>
+      </textarea>
+    </mat-form-field>
+    <div class="button-row m-t-md">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        (click)="saveList(listForm)">Save</button>
+      <button
+        mat-raised-button
+        (click)="closeDialog()">Close</button>
+    </div>
+  </form>
+</div>

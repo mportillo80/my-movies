@@ -1,0 +1,37 @@
+<header>
+  <mat-toolbar
+    color="primary"
+    fxLayout="row">
+    <div fxFlex>
+      <button
+        mat-button
+        routerLink="/"
+        routerLinkActive="mat-accent"
+        [routerLinkActiveOptions]="{exact: true}">
+        DASHBOARD
+      </button>
+      <button
+        mat-button
+        routerLink="/my-movies"
+        routerLinkActive="mat-accent">
+        MY MOVIES
+      </button>
+      <button
+        mat-button
+        routerLink="/search"
+        routerLinkActive="mat-accent">
+        SEARCH
+      </button>
+    </div>
+    <div
+      fxFlex
+      fxLayoutAlign="end">
+      <button
+        mat-button
+        routerLink="/settings"
+        routerLinkActive="mat-accent">
+        SETTINGS
+      </button>
+    </div>
+  </mat-toolbar>
+</header>
