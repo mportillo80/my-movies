@@ -2,9 +2,9 @@
 
 ## Overview
 
-![screenshot-1](https://github.com/mportillo80/my-movies/blob/master/assets/images/screenshot-1.png)
+![screenshot-1](https://github.com/mportillo80/my-movies/blob/master/src/assets/images/screenshot-1.png)
 
-![screenshot-2](https://github.com/mportillo80/my-movies/blob/master/assets/images/screenshot-2.png)
+![screenshot-2](https://github.com/mportillo80/my-movies/blob/master/src/assets/images/screenshot-2.png)
 
 My Movies is an Angular 6 web application that utilizes Angular Material and pulls movie related data from the [TMDb](https://www.themoviedb.org/about) API to build your own custom movie lists!
 
